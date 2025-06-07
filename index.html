@@ -1,107 +1,158 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUIZIN OF BET🔥</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sala de Sinais - Slots</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0e0e0e;
+      color: #f5f5f5;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    #theme-toggle {
+      padding: 10px 20px;
+      margin-top: 15px;
+      font-size: 14px;
+      background: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .caixa {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .caixa:hover {
+      transform: translateY(-5px);
+    }
+
+    .caixa img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .caixa a {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #00ba88;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .caixa a:hover {
+      background: #009e70;
+    }
+
+    /* Tema claro */
+    body.light-mode {
+      background-color: #ffffff;
+      color: #111111;
+    }
+
+    body.light-mode .caixa {
+      background: #f2f2f2;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    body.light-mode .caixa a {
+      background: #1e90ff;
+    }
+
+    body.light-mode .caixa a:hover {
+      background: #006ad1;
+    }
+
+    body.light-mode #theme-toggle {
+      background: #333;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="images/logo.png" alt="Sua Logo" class="logo" style="width: 100px; height: auto;" style="margin-top: 20px;">
-        <marquee id="scroller" style="display: none;"></marquee>
-        <a id="bannerLink" href="#">
-            <img src="images/banner.png" alt="Banner" class="banner">
-        </a>
-        <h1>Veja qual jogo tá PAGANDO MAIS:</h1>
-        <button onclick="carregar()" id="btnCarregar">Clique aqui e veja!</button>
-        <div class="success-message" id="successMessage"><span style="color: #00FF03;">RTP carregado com SUCESSO!</span></div>
-        <div class="cronometro" id="cronometro"></div>
-    </header>
-    <main>
+
+  <header>
+    <h1>Veja qual slot está pagando mais!</h1>
+    <button id="theme-toggle">🌙 Modo Escuro</button>
+  </header>
+
+  <main>
     <div class="container">
-        <!-- Caixa 1 -->
-        <div class="caixa">
-            <img src="https://exemplo.com/imagem-jogo1.png" alt="Jogo 1">
-            <a href="LINK_DO_JOGO_1" target="_blank">Jogar Agora</a>
-        </div>
+      <!-- SLOT 1 -->
+      <div class="caixa">
+        <img src="https://exemplo.com/imagem-slot1.png" alt="Slot 1">
+        <a href="https://link-do-jogo-slot1.com" target="_blank">Jogar Agora</a>
+      </div>
 
-        <!-- Caixa 2 -->
-        <div class="caixa">
-            <img src="https://exemplo.com/imagem-jogo2.png" alt="Jogo 2">
-            <a href="LINK_DO_JOGO_2" target="_blank">Jogar Agora</a>
-        </div>
+      <!-- SLOT 2 -->
+      <div class="caixa">
+        <img src="https://exemplo.com/imagem-slot2.png" alt="Slot 2">
+        <a href="https://link-do-jogo-slot2.com" target="_blank">Jogar Agora</a>
+      </div>
 
-        <!-- Repita para os outros jogos -->
+      <!-- SLOT 3 -->
+      <div class="caixa">
+        <img src="https://exemplo.com/imagem-slot3.png" alt="Slot 3">
+        <a href="https://link-do-jogo-slot3.com" target="_blank">Jogar Agora</a>
+      </div>
+
+      <!-- Adicione mais blocos conforme precisar -->
     </div>
-</main>
+  </main>
 
-            <!-- Caixa 2 -->
-            <div class="caixa">
-                <img class="imagem" src="images/dragon.png" alt="Imagem 2">
-                <p class="nome">Fortune Dragon</p>
-                <div class="progress-bar">
-                    <div class="loading-text" id="loadingText2"></div>
-                    <div class="progress-bar-inner" id="barraProgresso2"></div>
-                    <div class="progress-text" id="progressoTexto2"></div>
-                </div>
-                <div class="resultado" id="resultado2"></div>
-                <div class="btnJogarAgora" style="display: none;"><button onclick="jogarAgora(2, 'url2')">Jogue agora</button></div>
-            </div>
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
 
-            <!-- Caixa 3 -->
-            <div class="caixa">
-                <img class="imagem" src="images/ox.png" alt="Imagem 3">
-                <p class="nome">Fortune OX</p>
-                <div class="progress-bar">
-                    <div class="loading-text" id="loadingText3"></div>
-                    <div class="progress-bar-inner" id="barraProgresso3"></div>
-                    <div class="progress-text" id="progressoTexto3"></div>
-                </div>
-                <div class="resultado" id="resultado3"></div>
-                <div class="btnJogarAgora" style="display: none;"><button onclick="jogarAgora(3, 'url3')">Jogue agora</button></div>
-            </div>
+    if (localStorage.getItem("theme") === "light") {
+      body.classList.add("light-mode");
+      toggleBtn.textContent = "☀️ Modo Claro";
+    }
 
-            <!-- Caixa 4 -->
-            <div class="caixa">
-                <img class="imagem" src="images/mouse.png" alt="Imagem 4">
-                <p class="nome">Fortune Mouse</p>
-                <div class="progress-bar">
-                    <div class="loading-text" id="loadingText4"></div>
-                    <div class="progress-bar-inner" id="barraProgresso4"></div>
-                    <div class="progress-text" id="progressoTexto4"></div>
-                </div>
-                <div class="resultado" id="resultado4"></div>
-                <div class="btnJogarAgora" style="display: none;"><button onclick="jogarAgora(4, 'url4')">Jogue agora</button></div>
-            </div>
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("light-mode");
+      const isLight = body.classList.contains("light-mode");
+      toggleBtn.textContent = isLight ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  </script>
 
-            <!-- Caixa 5 -->
-            <div class="caixa">
-                <img class="imagem" src="images/coelho.png" alt="Imagem 5">
-                <p class="nome">Fortune Rabbit</p>
-                <div class="progress-bar">
-                    <div class="loading-text" id="loadingText5"></div>
-                    <div class="progress-bar-inner" id="barraProgresso5"></div>
-                    <div class="progress-text" id="progressoTexto5"></div>
-                </div>
-                <div class="resultado" id="resultado5"></div>
-                <div class="btnJogarAgora" style="display: none;"><button onclick="jogarAgora(5, 'url5')">Jogue agora</button></div>
-            </div>
-
-            <!-- Caixa 6 -->
-            <div class="caixa">
-                <img class="imagem" src="images/gold.png" alt="Imagem 6">
-                <p class="nome">Gemstones Gold</p>
-                <div class="progress-bar">
-                    <div class="loading-text" id="loadingText6"></div>
-                    <div class="progress-bar-inner" id="barraProgresso6"></div>
-                    <div class="progress-text" id="progressoTexto6"></div>
-                </div>
-                <div class="resultado" id="resultado6"></div>
-                <div class="btnJogarAgora" style="display: none;"><button onclick="https://baitapix.com/?ref=r7nNDtcWNu0">Jogue agora</button></div>
-            </div>
-        </div>
-    </main>
 </body>
-<script src="js/script.js"></script>
 </html>
